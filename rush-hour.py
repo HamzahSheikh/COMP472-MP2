@@ -63,6 +63,17 @@ for line in lines:
         constantH3 = 5
         print("h3: ", counth1*constantH3)
 
+#create an array to store visited nodes
+visited = []
+
+
+    
+
+  
+    
+
+
+
 
 
 
