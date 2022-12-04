@@ -27,13 +27,13 @@ Run the following command
 python rush-hour.py
 ```
 
-To add the path to a file containing an input, change line 103 with the appropriate path:
+## To add the path to a file containing an input, change line 103 with the appropriate path:
 
 ```
 102 f = open(r"C:\Users\Hamzah\Projects\COMP472-MP2\Sample\sample-input.txt", 'r')
 ```
 
-To change the path where the ouput files will be stored, change line 20 and 85 to the appropriate path:
+## To change the path where the ouput files will be stored, change line 20 and 85 to the appropriate path:
 
 ```
 20 f = open(r"C:\Users\Hamzah\Projects\COMP472-MP2\results\\"+str(searchType)+"-sol-"+str(gameNumber)+".txt", 'w')
