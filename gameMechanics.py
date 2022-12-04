@@ -66,6 +66,18 @@ class gameMechanics:
                 print(game[row][col], end=" ")
             print()
 
+        #Function used to print the game
+    def printGame(self, game):
+
+        if game == None:
+            print("No solution")
+            return
+
+        for row in range(len(game)):
+            for col in range(len(game[row])):
+                print(game[row][col], end=" ")
+            print()
+
     #Find if the car is horitzontal or vertical
     def findDirectionAndLength(self, game):
         
@@ -111,9 +123,19 @@ class gameMechanics:
             #Move the car right
             gameAfterMove[row][carFront+1] = game[row][col]
             gameAfterMove[row][carBack] = '.'
+
+            carBack += 1
+
+            #Valet system to remove a horizontal car at Row 2 Col 5
+            if carFront+1 == 5 and row == 2 and car != 'A':
+                while carBack <= 5:
+                    gameAfterMove[row][carBack] = '.'
+                    carBack += 1
             return gameAfterMove  
         else:
             return None
+
+
 
     #Function to move car left
     def moveLeft(self, game, row, col, car):

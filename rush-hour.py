@@ -86,14 +86,21 @@ def printSearch(gameNumber, searchType, resultNode):
     
     
     for x in resultNode[1]:
-        f.write(str(x.fValue) + " " + str(x.depth) + " " + str(x.heuristicValue) + " " + gameMechanics.reconvert(x.game) + "\n")
+        if searchType == "ucs":
+            f.write(str(0) + " " + str(x.depth) + " " + str(0) + " " + gameMechanics.reconvert(x.game) + "\n")
+        if "gbfs" in searchType:
+            f.write(str(0) + " " + str(0) + " " + str(x.heuristicValue) + " " + gameMechanics.reconvert(x.game) + "\n")
+        if "a" in searchType:
+            f.write(str(x.fValue) + " " + str(x.depth) + " " + str(x.heuristicValue) + " " + gameMechanics.reconvert(x.game) + "\n")
     
     f.close()
 
-    
+#Time to run the program
+start_time = time.time()
+
 
 #Open file
-f = open(r"C:\Users\Hamzah\Projects\COMP472-MP2\puzzles.txt", 'r')
+f = open(r"C:\Users\Hamzah\Projects\COMP472-MP2\Sample\sample-input.txt", 'r')
 
 #Read lines in file
 lines = f.readlines()
@@ -272,7 +279,7 @@ for line in lines:
     gameNumber += 1
 
 # Create a Pandas Excel writer using XlsxWriter as the engine.
-writer = pd.ExcelWriter("MP2results.xlsx", engine='xlsxwriter')
+writer = pd.ExcelWriter("MP2results2.xlsx", engine='xlsxwriter')
 
 # Convert the dataframe to an XlsxWriter Excel object.
 df.to_excel(writer, sheet_name='Results')
@@ -287,6 +294,9 @@ worksheet.set_column(1, 1, 30)
 # Close the Pandas Excel writer and output the Excel file.
 writer.save()
 
+end_time = time.time()
+
+print("Total time: " + str(round(end_time - start_time, 2)) + " seconds")
     
 
 
