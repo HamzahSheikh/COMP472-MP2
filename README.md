@@ -3,6 +3,8 @@ https://github.com/HamzahSheikh/COMP472-MP2
 # COMP472-MP2
 Mini Project 2 for AI
 
+***Important: Install all dependencies before proceedong!
+
 ### About this repo
 
 In this mini-project a variety of search algorithms were implemented and analysed to play Rush Hour. 
